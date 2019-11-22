@@ -40,5 +40,11 @@ namespace Expression.Cores
 
             return this;
         }
+
+        public override string ToString(ExpressionFormat format)
+        {
+            return (Coefficient > 1 ? Coefficient.ToString() : "") + "x" + 
+                (Exponential > 1 ? "^" + Exponential : "");
+        }
     }
 }

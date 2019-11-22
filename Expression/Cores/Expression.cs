@@ -46,10 +46,7 @@ namespace Expression.Cores
             return Evaluate();
         }
 
-        public string ToString(ExpressionFormat format)
-        {
-            return base.ToString();
-        }
+        public abstract string ToString(ExpressionFormat format);
 
     }
 }

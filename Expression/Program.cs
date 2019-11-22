@@ -1,4 +1,5 @@
 ﻿using Expression.Cores;
+using Expression.Cores.Format;
 using System;
 
 namespace Expression
@@ -16,7 +17,9 @@ namespace Expression
                 new SimpleExpression(2, 1));
 
             Console.WriteLine(fx.Evaluate(2));
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Infix: " + fx.ToString(new InfixFormat()));
+            Console.WriteLine("Prefix: " + fx.ToString(new PrefixFormat()));
+            Console.WriteLine("Postfix: " + fx.ToString(new PostfixFormat()));
         }
     }
 }

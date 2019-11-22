@@ -15,5 +15,10 @@ namespace Expression.Cores
         {
             return new ConstantExpression(0);
         }
+
+        public override string ToString(ExpressionFormat format)
+        {
+            return Coefficient.ToString();
+        }
     }
 }

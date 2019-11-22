@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Reflection;
 using System.Text;
 
 namespace Expression.Cores
@@ -130,7 +132,7 @@ namespace Expression.Cores
 
             if (Operator == Operator.Divided)
             {
-                ComplexExpression expression = new ComplexExpression(1, 1, 1, Operator.Divided);
+                ComplexExpression expression;
 
                 IExpression u = Expressions[0];
                 ComplexExpression v = new ComplexExpression(1, 1, Operator.Multiple);
@@ -157,5 +159,18 @@ namespace Expression.Cores
         {
             Expressions.Add(expression);
         }
+
+        public override string ToString(ExpressionFormat format)
+        {
+            List<string> expressions = new List<string>(Expressions.Count);
+            for (int loop = 0; loop < Expressions.Count; loop++)
+            {
+                expressions.Add(Expressions[loop].ToString(format));
+            }
+            
+            return format.Arrange(expressions, Operator.GetDescription());
+        }
+
+        
     }
 }

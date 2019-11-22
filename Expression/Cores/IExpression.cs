@@ -12,6 +12,7 @@ namespace Expression.Cores
         double Evaluate();
         double Evaluate(double variable);
         IExpression Derive();
-        
+        string ToString(ExpressionFormat format);
+
     }
 }
