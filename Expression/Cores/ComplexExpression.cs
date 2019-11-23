@@ -52,7 +52,6 @@ namespace Expression.Cores
                 {
                     sum += Expressions[loop].Evaluate(Variable);
                 }
-                meos
                 return sum;
             }
 
